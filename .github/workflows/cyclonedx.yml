@@ -1,0 +1,14 @@
+name: Debricked scan
+
+on: [push]
+
+jobs:
+  vulnerabilities-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: CycloneDX PHP Composer Generate SBOM
+  # You may pin to the exact commit or the version.
+  # uses: CycloneDX/gh-php-composer-generate-sbom@2542c5f10439937d4f4e33a3ff5f4705c217d0ba
+      - uses: CycloneDX/gh-php-composer-generate-sbom@v1.0.2
